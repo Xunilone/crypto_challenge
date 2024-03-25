@@ -12,18 +12,18 @@ __On vous donne cinq fichiers qui se trouvent dans /home/kali/examsecu/challenge
 5.	coffrefort.chiffre : qui contient ce que vous devez déchiffrer au final avec le mot de passe qui se trouve dans le fichier chiffré cleFinale
 
 __Quelle est la taille de la clé RSA qui protège le mot de passe ?__
-A voir
++ A voir
 
 __Décoder mdpBase64 qui contient le mot de passe qui protège la clé MaCleRSA.pem__ 
-openssl enc -d -base64 -in mdpBase64
-*examRT2*
++ openssl enc -d -base64 -in mdpBase64
++ *examRT2*
 
 __Avec quel algorithme symétrique avons-nous chiffrer la clé privée MaCleRSA.pem ?__
-*RSA*
-openssl rsa -in MaCleRSA.pem (Pour voir le contenu de la clé)
++ *RSA*
++ openssl rsa -in MaCleRSA.pem (Pour voir le contenu de la clé)
 
 __Dechiffrer motDePasse.rsa avec la clé privée MaCleRSA.pem ?__
-openssl rsautl -decrypt -inkey MaCleRSA.pem -in motDePasse.rsa
++ openssl rsautl -decrypt -inkey MaCleRSA.pem -in motDePasse.rsa
 *mdp2*
 openssl rsautl -decrypt -inkey MaCleRSA.pem -in motDePasse.rsa -out mdprsa.txt (pour l'avoir directement dans un fichier)
 
