@@ -24,18 +24,18 @@ __Avec quel algorithme symétrique avons-nous chiffrer la clé privée MaCleRSA.
 
 __Dechiffrer motDePasse.rsa avec la clé privée MaCleRSA.pem ?__
 + openssl rsautl -decrypt -inkey MaCleRSA.pem -in motDePasse.rsa
-*mdp2*
-openssl rsautl -decrypt -inkey MaCleRSA.pem -in motDePasse.rsa -out mdprsa.txt (pour l'avoir directement dans un fichier)
++ *mdp2*
++ openssl rsautl -decrypt -inkey MaCleRSA.pem -in motDePasse.rsa -out mdprsa.txt (pour l'avoir directement dans un fichier)
 
 __Grace au mot de passe trouvé à la question précédente, on vous demande de trouver le mot de passe caché dans le fichier cleFinale__
-openssl enc -d -aes-256-cbc -in cleFinale -out cleDeciphered.txt -pass file:mdprsa.txt
-cat cleDeciphered.txt 
-*Hello, vous avez réussi le challange : le mot de passe du coffre fort est : Bonjour
++ openssl enc -d -aes-256-cbc -in cleFinale -out cleDeciphered.txt -pass file:mdprsa.txt
++ cat cleDeciphered.txt 
++ **Hello, vous avez réussi le challange : le mot de passe du coffre fort est : Bonjour*
 
 __Enfin, déchiffrer le fichier coffrefort.chiffre__ 
-openssl enc -d -aes-256-cbc -in coffrefort.chiffre -out coffrefort_dechiffre.txt -pass file:mdpcf.txt (fichier avec seulement *Bonjour*)
-cat coffrefort_dechiffre.txt 
-*Bravo, vous avez réussi et le nombre de points qui vous aurez pur avoir vancu ce challenge est de : 4 points*
++ openssl enc -d -aes-256-cbc -in coffrefort.chiffre -out coffrefort_dechiffre.txt -pass file:mdpcf.txt (fichier avec seulement *Bonjour*)
++ cat coffrefort_dechiffre.txt 
++ *Bravo, vous avez réussi et le nombre de points qui vous aurez pur avoir vancu ce challenge est de : 4 points*
 
 
 
